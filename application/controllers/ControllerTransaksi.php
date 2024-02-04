@@ -66,11 +66,12 @@ class ControllerTransaksi extends CI_Controller
                 $readTransaksi = $this->db->select(
                     "
                 pinjam.*,
-                siswa.nama_siswa
+                siswa.nama_siswa,
                 "
                 )->from('pinjam')
                     ->join('siswa', 'siswa.id_user = pinjam.id_user')
                     ->where(['siswa.id_user' => $user['id_user']])
+                    ->limit(10)
                     ->get();
             } elseif ($user['level'] == 'GURU') {
 
@@ -90,6 +91,7 @@ class ControllerTransaksi extends CI_Controller
                 throw new Exception('transaksi belum tersedia');
 
             $dataPinjam = $this->DataDetailPinjam($readTransaksi->result_array());
+
             // load library 'qrcode'
             $this->load->library('QrcodeLibrary');
 

@@ -72,12 +72,9 @@ class Pinjam extends CI_Controller
             redirect("pinjam/detail/{$idPinjam}");
         }
     }
-    public function AccPinjam($id)
+    public function AccPinjam($noTransaksi, $idPinjam)
     {
         try {
-            @$decode = $this->secure->decode($id);
-            $noTransaksi = $decode[0];
-            $idPinjam = $decode[1];
 
             $cekTransaksi = $this->db->get_where('pinjam', ['no_transaksi' => $noTransaksi]);
 

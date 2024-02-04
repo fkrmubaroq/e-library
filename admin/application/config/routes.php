@@ -9,8 +9,8 @@ $route['divisi'] = 'Divisi/index';
 $route['jenis'] = 'Jenis/index';
 
 $route['pinjam/detail/(:num)'] = 'Pinjam/DetailPinjam/$1';
-$route['pinjam/acc/(:any)'] = 'Pinjam/AccPinjam/$1';
-$route['pinjam/batalacc/(:any)'] = 'Pinjam/BatalPinjam/$1';
+$route['pinjam/acc/(:any)/(:any)'] = 'Pinjam/AccPinjam/$1/$2';
+$route['pinjam/batalacc/(:any)/(:any)'] = 'Pinjam/BatalPinjam/$1/$2';
 
 $route['login'] = 'Login/index';
 $route['logout'] = 'Login/logout';

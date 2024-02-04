@@ -1,6 +1,5 @@
 
-const ProjectName = (window.location.pathname).split('/')[1];
-const Endpoint = window.location.origin + '/' + ProjectName;
+const Endpoint = window.location.origin;
 /**
  * @licstart The following is the entire license notice for the
  * Javascript code in this page

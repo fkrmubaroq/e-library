@@ -9,8 +9,8 @@
     }
 </style>
 <?php
-
-$qrCode = $this->qrcodelibrary->QRCode($transaksi->no_transaksi) ?>
+$this->load->library("Librari");
+$qrCode = "" ?>
 <div class="container-fluid padding-bottom-7">
 
     <div class="row margin-top-5">
@@ -157,9 +157,9 @@ $qrCode = $this->qrcodelibrary->QRCode($transaksi->no_transaksi) ?>
 
         <div class='w-100 text-right margin-right-3'>
             <?php if ($transaksi->status == '2') : ?>
-                <a href="<?= base_url('pinjam/batalacc/' . $this->secure->encode([$transaksi->no_transaksi, $transaksi->id])) ?>" class='btn btn-danger btn-md'>BATAL ACC</a>
+                <a href="<?= base_url('pinjam/batalacc/' . ($transaksi->no_transaksi)."/". ($transaksi->id)) ?>" class='btn btn-danger btn-md'>BATAL ACC</a>
             <?php else : ?>
-                <a href="<?= base_url('pinjam/acc/' . $this->secure->encode([$transaksi->no_transaksi, $transaksi->id])) ?>" class='btn btn-primary btn-md'>ACC PINJAM</a>
+                <a href="<?= base_url('pinjam/acc/' .($transaksi->no_transaksi) . "/" . ($transaksi->id)) ?>" class='btn btn-primary btn-md'>ACC PINJAM</a>
             <?php endif; ?>
         </div>
     </div>
