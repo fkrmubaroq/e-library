@@ -285,7 +285,7 @@ trait CheckoutProccess
             $AllowDataPinjam['id_pinjam'] = $IdPinjam;
 
             // unset keranjang
-            // unset($_SESSION['items']);
+            unset($_SESSION['items']);
 
             // masukan ke session
             $_SESSION[sha1('checkout') . '_'] = $AllowDataPinjam;
